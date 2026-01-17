@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public OrderManager orderManager;
+    public InventoryManager inventoryManager;
 
     private void Awake()
     {
@@ -16,5 +17,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 }

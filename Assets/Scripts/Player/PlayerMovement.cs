@@ -61,5 +61,5 @@ public class PlayerMovement : MonoBehaviour
         playerRb.linearVelocity = new Vector2(input * speed, playerRb.linearVelocity.y);
     }
 
-    
+
 }
