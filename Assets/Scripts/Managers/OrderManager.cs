@@ -37,18 +37,4 @@ public class OrderManager : MonoBehaviour
     {
         return heldOrder;
     }
-
-    public List<int> GetFreeTables()
-    {
-        List<int> rtn = new List<int>();
-        for (int i = 0; i < currentOrders.Length; i++)
-        {
-            if (currentOrders[i] == null)
-            {
-                rtn.Add(i);
-            }
-        }
-        return rtn;
-        
-    }
 }

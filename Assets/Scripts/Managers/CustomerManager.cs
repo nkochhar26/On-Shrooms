@@ -70,9 +70,8 @@ public class CustomerManager : MonoBehaviour
         activeCustomers[tableIndex] = new CustomerInfo(customerType, tableIndex, takenOrder);
     }
 
-    public void DespawnCustomer(int tableIndex)
+    public void RemoveCustomer(int tableIndex)
     {
-        Destroy(activeCustomers[tableIndex].customer);
         activeCustomers[tableIndex] = null;
     }
 
@@ -89,5 +88,18 @@ public class CustomerManager : MonoBehaviour
     public bool GetTakenOrder(int tableNum)
     {
         return activeCustomers[tableNum].takenOrder;
+    }
+
+    public List<int> GetFreeTables()
+    {
+        List<int> rtn = new List<int>();
+        for (int i = 0; i < activeCustomers.Length; i++)
+        {
+            if (activeCustomers[i] == null)
+            {
+                rtn.Add(i);
+            }
+        }
+        return rtn;
     }
 }

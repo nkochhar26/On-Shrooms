@@ -14,7 +14,8 @@ public class Customer : MonoBehaviour, IInteractable
         if (GameManager.Instance.customerManager.GetTakenOrder(tableNum))
         {
             Debug.Log("You've taken my order");
-            //check held dish matching here
+            //TODO: check held dish matching here - reputation and money calculation
+            Destroy(this.gameObject);
         }
         else
         {

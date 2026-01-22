@@ -27,7 +27,7 @@ public class CustomerSpawner : MonoBehaviour
     //randomized, updates gameobject and customerManager
     public void SpawnCustomer()
     {
-        List<int> openTables = GameManager.Instance.orderManager.GetFreeTables();
+        List<int> openTables = GameManager.Instance.customerManager.GetFreeTables();
         if (openTables.Count == 0)
         {
             Debug.Log("Tables full");
@@ -36,7 +36,7 @@ public class CustomerSpawner : MonoBehaviour
         int tableIndex = Random.Range(0, openTables.Count);
         int customerIndex = Random.Range(0, possibleCustomers.Count);
 
-        SpawnCustomer(possibleCustomers[customerIndex].GetComponent<Customer>().GetCustomerType(), tableIndex, false);
+        SpawnCustomer(possibleCustomers[customerIndex].GetComponent<Customer>().GetCustomerType(), openTables[tableIndex], false);
     }
 
     //used for loadData
@@ -62,8 +62,6 @@ public class CustomerSpawner : MonoBehaviour
         {
             if (customerInfo != null)
             {
-                Debug.Log("loading data for table: " + customerInfo.tableNum);
-                Debug.Log("They have taken order: " + customerInfo.takenOrder);
                 SpawnCustomer(customerInfo.customerType, customerInfo.tableNum, customerInfo.takenOrder);
             }
         }
