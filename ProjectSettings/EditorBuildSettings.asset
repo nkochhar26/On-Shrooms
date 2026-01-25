@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kitchen.unity
     guid: 4e302e17cbd6b6148a7e841833b37a45
+  - enabled: 1
+    path: Assets/Scenes/Alex/Alex Forage.unity
+    guid: 9922a6af4e194c448bfc4adc349c9605
+  - enabled: 1
+    path: Assets/Scenes/Alex/Alex Restaurant.unity
+    guid: 4a80bd7e0ab07b741ad6eb7228b9ae99
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
