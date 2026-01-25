@@ -1,18 +1,21 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class KitchenInventoryUI : MonoBehaviour
+public class AlexKitchenInventoryUI : MonoBehaviour
 {
     public GameObject itemUI;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
         UpdateItems();
     }
 
     public void UpdateItems()
     {
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
         Debug.Log("Loading Items");
         Dictionary<Item, int> items = GameManager.Instance.inventoryManager.GetItems();
         foreach (Item item in items.Keys)

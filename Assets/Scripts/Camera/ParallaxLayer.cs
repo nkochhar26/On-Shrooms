@@ -16,12 +16,11 @@ public class ParallaxLayer : MonoBehaviour
         for (int i = 0; i < tiles.Length; i++)
             tiles[i] = transform.GetChild(i);
 
-        tileWidth = tiles[0].GetComponent<Renderer>().bounds.size.x;
+        tileWidth = tiles[0].GetComponent<MeshRenderer>().bounds.size.x;
     }
 
     void LateUpdate()
     {
-        if(cam==null) cam = Camera.main.transform;
         float camX = cam.position.x;
 
         transform.position = new Vector3(camX * parallaxMultiplier, transform.position.y, transform.position.z);
